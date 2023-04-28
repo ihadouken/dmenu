@@ -39,7 +39,8 @@
  * XA_PRIMARY can then be pasted using Ctrl+Shift+y.
  *
  * If the CTRL_V_TO_PASTE_PATCH is used, the paste bindings provided by
- * it are also switched i.e Ctrl+v (CLIPBOARD) and Ctrl+Shift+v (XA_PRIMARY)*/
+ * it are also switched i.e Ctrl+v (CLIPBOARD) and Ctrl+Shift+v (XA_PRIMARY)
+ */
 #define CLIP_PASTE_NO_SHIFT_PATCH  0
 
 /* This patch adds a flag (-dy) which makes dmenu run the command given to it whenever input

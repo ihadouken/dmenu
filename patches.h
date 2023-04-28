@@ -39,7 +39,8 @@
  * XA_PRIMARY can then be pasted using Ctrl+Shift+y.
  *
  * If the CTRL_V_TO_PASTE_PATCH is used, the paste bindings provided by
- * it are also switched i.e Ctrl+v (CLIPBOARD) and Ctrl+Shift+v (XA_PRIMARY)*/
+ * it are also switched i.e Ctrl+v (CLIPBOARD) and Ctrl+Shift+v (XA_PRIMARY)
+ */
 #define CLIP_PASTE_NO_SHIFT_PATCH 1
 
 /* This patch adds a flag (-dy) which makes dmenu run the command given to it whenever input
@@ -114,7 +115,7 @@
  * is only one matching option left.
  * https://tools.suckless.org/dmenu/patches/instant/
  */
-#define INSTANT_PATCH 0
+#define INSTANT_PATCH 1
 
 /* This patch adds a '-h' option which sets the minimum height of a dmenu line. This helps
  * integrate dmenu with other UI elements that require a particular vertical size.
