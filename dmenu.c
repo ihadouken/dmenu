@@ -1039,8 +1039,13 @@ keypress(XKeyEvent *ev)
 			expect("ctrl-v", ev);
 		#endif // FZFEXPECT_PATCH
 		case XK_V:
+		#if CLIP_PASTE_NO_SHIFT_PATCH
+			XConvertSelection(dpy, (ev->state & ShiftMask) ? XA_PRIMARY : clip,
+			                  utf8, utf8, win, CurrentTime);
+		#else
 			XConvertSelection(dpy, (ev->state & ShiftMask) ? clip : XA_PRIMARY,
 			                  utf8, utf8, win, CurrentTime);
+		#endif // CLIP_PASTE_NO_SHIFT_PATCH
 			return;
 		#endif // FZFEXPECT_PATCH | CTRL_V_TO_PASTE_PATCH
 		#if FZFEXPECT_PATCH
@@ -1049,8 +1054,13 @@ keypress(XKeyEvent *ev)
 		case XK_y: /* paste selection */
 		#endif // FZFEXPECT_PATCH
 		case XK_Y:
+		#if CLIP_PASTE_NO_SHIFT_PATCH
+			XConvertSelection(dpy, (ev->state & ShiftMask) ? XA_PRIMARY : clip,
+			                  utf8, utf8, win, CurrentTime);
+		#else
 			XConvertSelection(dpy, (ev->state & ShiftMask) ? clip : XA_PRIMARY,
 			                  utf8, utf8, win, CurrentTime);
+		#endif // CLIP_PASTE_NO_SHIFT_PATCH
 			return;
 		#if FZFEXPECT_PATCH
 		case XK_x: expect("ctrl-x", ev); break;

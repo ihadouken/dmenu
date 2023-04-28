@@ -35,6 +35,13 @@
  */
 #define CTRL_V_TO_PASTE_PATCH 1
 
+/* Enable to paste from CLIPBOARD instead from XA_PRIMARY using Ctrl+y.
+ * XA_PRIMARY can then be pasted using Ctrl+Shift+y.
+ *
+ * If the CTRL_V_TO_PASTE_PATCH is used, the paste bindings provided by
+ * it are also switched i.e Ctrl+v (CLIPBOARD) and Ctrl+Shift+v (XA_PRIMARY)*/
+#define CLIP_PASTE_NO_SHIFT_PATCH 1
+
 /* This patch adds a flag (-dy) which makes dmenu run the command given to it whenever input
  * is changed with the current input as the last argument and update the option list according
  * to the output of that command.
