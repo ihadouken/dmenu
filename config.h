@@ -26,6 +26,9 @@ static const int sidepad = 10;              /* horizontal padding of bar */
 static int restrict_return = 0;             /* -1 option; if 1, disables shift-return and ctrl-return */
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
+#if PASSWORD_PATCH
+static char hidech = '*';
+#endif
 #if PANGO_PATCH
 static char font[] = "monospace 10";
 #else

@@ -533,7 +533,7 @@ drawmenu(void)
 	#if PASSWORD_PATCH
 	if (passwd) {
 		censort = ecalloc(1, sizeof(text));
-		memset(censort, '.', strlen(text));
+		memset(censort, hidech, strlen(text));
 		drw_text_align(drw, x, 0, curpos, bh, censort, cursor, AlignR);
 		drw_text_align(drw, x + curpos, 0, w - curpos, bh, censort + cursor, strlen(censort) - cursor, AlignL);
 		free(censort);
@@ -555,7 +555,7 @@ drawmenu(void)
 	#if PASSWORD_PATCH
 	if (passwd) {
 		censort = ecalloc(1, sizeof(text));
-		memset(censort, '.', strlen(text));
+		memset(censort, hidech, strlen(text));
 		drw_text(drw, x, 0, w, bh, lrpad / 2, censort, 0
 			#if PANGO_PATCH
 			, False
