@@ -28,7 +28,7 @@ static int restrict_return = 0;             /* -1 option; if 1, disables shift-r
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PASSWORD_PATCH
 static char hidech = '*';
-#endif
+#endif // PASSWORD_PATCH
 #if PANGO_PATCH
 static char font[] = "monospace 10";
 #else
@@ -38,7 +38,8 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"monospace:size=10"
+	"mononoki:pixelsize=16:antialias=true:autohint=true",
+	"JoyPixels:pixelsize=20:antialias=true:autohint=true"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -142,7 +143,7 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 0;
+static unsigned int border_width = 2;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH
