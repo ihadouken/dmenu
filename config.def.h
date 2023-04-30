@@ -86,6 +86,23 @@ static
 #if !XRESOURCES_PATCH
 const
 #endif // XRESOURCES_PATCH
+
+#if CUSTOM_COLORS_PATCH
+/*
+ * SELECT YOUR COLOR SCHEME
+ * Available themes are:
+ * 1. doom-one.h
+ * 2. dracula.h
+ * 3. gruvbox-dark.h
+ * 4. monokai-pro.h
+ * 5. nord.h
+ * 6. oceanic-next.h
+ * 7. solarized-dark.h
+ * 8. solarized-light.h
+ * 9. tomorrow-night.h
+ */
+#include "colors/doom-one.h"
+#else
 char *colors[][2] = {
 	/*               fg         bg       */
 	[SchemeNorm] = { "#bbbbbb", "#222222" },
@@ -113,6 +130,8 @@ char *colors[][2] = {
 	[SchemePurple] = { "#ffffff", "#9952e0" },
 	#endif // EMOJI_HIGHLIGHT_PATCH
 };
+#endif // CUSTOM_COLORS_PATCH
+
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 #if GRID_PATCH

@@ -43,6 +43,11 @@
  */
 #define CLIP_PASTE_NO_SHIFT_PATCH 1
 
+/* This patch adds support for custom colorschemes (dropped in colors directory).
+ * The colorschemes are just C header files that are included in config.h.
+ */
+#define CUSTOM_COLORS_PATCH 0
+
 /* This patch adds a flag (-dy) which makes dmenu run the command given to it whenever input
  * is changed with the current input as the last argument and update the option list according
  * to the output of that command.
