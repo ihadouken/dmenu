@@ -21,36 +21,43 @@ readxresources(void)
 		else
 			fonts[0] = strdup(fonts[0]);
 		#endif // PANGO_PATCH
-		if (XrmGetResource(xdb, "dmenu.background", "*", &type, &xval))
+        /* Colors for non-selected options. */
+		if (XrmGetResource(xdb, "background", "*", &type, &xval))
 			colors[SchemeNorm][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.foreground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeNorm][ColFg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.selbackground", "*", &type, &xval))
+        /* Colors for selected options. */
+		if (XrmGetResource(xdb, "color4", "*", &type, &xval))
 			colors[SchemeSel][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.selforeground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeSel][ColFg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.outbackground", "*", &type, &xval))
+        /* Colors for options already selected for output. (for multiple outputs) */
+		if (XrmGetResource(xdb, "color6", "*", &type, &xval))
 			colors[SchemeOut][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.outforeground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeOut][ColFg] = strdup(xval.addr);
 		#if MORECOLOR_PATCH
-		if (XrmGetResource(xdb, "dmenu.midbackground", "*", &type, &xval))
+        /* Colors for options adjacent to selected option. */
+		if (XrmGetResource(xdb, "color12", "*", &type, &xval))
 			colors[SchemeMid][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.midforeground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeMid][ColFg] = strdup(xval.addr);
 		#endif // MORECOLOR_PATCH
 		#if BORDER_PATCH
-		if (XrmGetResource(xdb, "dmenu.bordercolor", "*", &type, &xval))
+        /* Color of the window's border. */
+		if (XrmGetResource(xdb, "color1", "*", &type, &xval))
 			colors[SchemeBorder][ColBg] = strdup(xval.addr);
 		#endif // BORDER_PATCH
 		#if HIGHLIGHT_PATCH || FUZZYHIGHLIGHT_PATCH
-		if (XrmGetResource(xdb, "dmenu.selhlbackground", "*", &type, &xval))
+        /* Colors for highlighting of selected option. */
+		if (XrmGetResource(xdb, "background", "*", &type, &xval))
 			colors[SchemeSelHighlight][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.selhlforeground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "color2", "*", &type, &xval))
 			colors[SchemeSelHighlight][ColFg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.hlbackground", "*", &type, &xval))
+        /* Colors for highlighting of other (non-selected) options. */
+		if (XrmGetResource(xdb, "background", "*", &type, &xval))
 			colors[SchemeNormHighlight][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "dmenu.hlforeground", "*", &type, &xval))
+		if (XrmGetResource(xdb, "color5", "*", &type, &xval))
 			colors[SchemeNormHighlight][ColFg] = strdup(xval.addr);
 		#endif // HIGHLIGHT_PATCH | FUZZYHIGHLIGHT_PATCH
 		#if HIGHPRIORITY_PATCH
