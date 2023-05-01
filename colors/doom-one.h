@@ -4,7 +4,7 @@ char *colors[SchemeLast][2] = {
 	[SchemeSel] = { "#1c1f24", "#c678dd" },
 	[SchemeOut] = { "#000000", "#51afef" },
     #if BORDER_PATCH
-    [SchemeBorder] = { "#000000", "#1F9AB9" },
+    [SchemeBorder] = { "#000000", "#1f9ab9" },
     #endif // BORDER_PATCH
 	#if MORECOLOR_PATCH
 	[SchemeMid] = { "#d7d7d7", "#1c1f24" },
