@@ -45,6 +45,9 @@
 
 /* This patch adds support for custom colorschemes (dropped in colors directory).
  * The colorschemes are just C header files that are included in config.h.
+ *
+ * Note: XRESOURCES_PATCH takes precedence over this patch if the required X resources
+ * exist for the root window.
  */
 #define CUSTOM_COLORS_PATCH 1
 
@@ -353,7 +356,7 @@
  *
  * https://tools.suckless.org/dmenu/patches/xresources/
  */
-#define XRESOURCES_PATCH 0
+#define XRESOURCES_PATCH 1
 
 /* This patch adds options for specifying dmenu window position and width.
  * The center patch takes precedence over the XYW patch if enabled.
