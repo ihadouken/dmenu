@@ -62,6 +62,9 @@ static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	#if !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH 
+	[SchemePrompt] = { OPAQUE, baralpha, borderalpha },
+	#endif // !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
 	#if BORDER_PATCH
 	[SchemeBorder] = { OPAQUE, OPAQUE, OPAQUE },
 	#endif // BORDER_PATCH
@@ -108,30 +111,33 @@ const
 #include "colors/doom-one.h"
 #else
 char *colors[][2] = {
-	/*               fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#222222" },
-	[SchemeSel]  = { "#eeeeee", "#005577" },
-	[SchemeOut]  = { "#000000", "#00ffff" },
+	/* color                    fg         bg   */
+	[SchemeNorm]          = { "#bbbbbb", "#222222" },
+	[SchemeSel]           = { "#eeeeee", "#005577" },
+	[SchemeOut]           = { "#000000", "#00ffff" },
+	#if !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH 
+	[SchemePrompt]        = { "#eeeeee", "#005577" },
+	#endif // !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
 	#if BORDER_PATCH
-	[SchemeBorder] = { "#000000", "#005577" },
+	[SchemeBorder]        = { "#000000", "#005577" },
 	#endif // BORDER_PATCH
 	#if MORECOLOR_PATCH
-	[SchemeMid]  = { "#eeeeee", "#770000" },
+	[SchemeMid]           = { "#eeeeee", "#770000" },
 	#endif // MORECOLOR_PATCH
 	#if HIGHLIGHT_PATCH || FUZZYHIGHLIGHT_PATCH
 	[SchemeSelHighlight]  = { "#ffc978", "#005577" },
 	[SchemeNormHighlight] = { "#ffc978", "#222222" },
 	#endif // HIGHLIGHT_PATCH | FUZZYHIGHLIGHT_PATCH
 	#if HIGHPRIORITY_PATCH
-	[SchemeHp]   = { "#bbbbbb", "#333333" },
+	[SchemeHp]            = { "#bbbbbb", "#333333" },
 	#endif // HIGHPRIORITY_PATCH
 	#if EMOJI_HIGHLIGHT_PATCH
-	[SchemeHover]  = { "#ffffff", "#353D4B" },
-	[SchemeGreen]  = { "#ffffff", "#52E067" },
-	[SchemeRed]    = { "#ffffff", "#e05252" },
-	[SchemeYellow] = { "#ffffff", "#e0c452" },
-	[SchemeBlue]   = { "#ffffff", "#5280e0" },
-	[SchemePurple] = { "#ffffff", "#9952e0" },
+	[SchemeHover]         = { "#ffffff", "#353D4B" },
+	[SchemeGreen]         = { "#ffffff", "#52E067" },
+	[SchemeRed]           = { "#ffffff", "#e05252" },
+	[SchemeYellow]        = { "#ffffff", "#e0c452" },
+	[SchemeBlue]          = { "#ffffff", "#5280e0" },
+	[SchemePurple]        = { "#ffffff", "#9952e0" },
 	#endif // EMOJI_HIGHLIGHT_PATCH
 };
 #endif // CUSTOM_COLORS_PATCH

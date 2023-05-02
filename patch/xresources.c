@@ -26,19 +26,26 @@ readxresources(void)
 			colors[SchemeNorm][ColBg] = strdup(xval.addr);
 		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeNorm][ColFg] = strdup(xval.addr);
-        /* Colors for selected options. */
-		if (XrmGetResource(xdb, "color4", "*", &type, &xval))
+        /* Colors for selected option. */
+		if (XrmGetResource(xdb, "color13", "*", &type, &xval))
 			colors[SchemeSel][ColBg] = strdup(xval.addr);
 		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeSel][ColFg] = strdup(xval.addr);
         /* Colors for options already selected for output. (for multiple outputs) */
-		if (XrmGetResource(xdb, "color6", "*", &type, &xval))
+		if (XrmGetResource(xdb, "color3", "*", &type, &xval))
 			colors[SchemeOut][ColBg] = strdup(xval.addr);
 		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeOut][ColFg] = strdup(xval.addr);
+		#if !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
+        /* Colors for the menu prompt textarea. */
+		if (XrmGetResource(xdb, "color5", "*", &type, &xval))
+			colors[SchemePrompt][ColBg] = strdup(xval.addr);
+		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
+			colors[SchemePrompt][ColFg] = strdup(xval.addr);
+		#endif // !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
 		#if MORECOLOR_PATCH
         /* Colors for options adjacent to selected option. */
-		if (XrmGetResource(xdb, "color12", "*", &type, &xval))
+		if (XrmGetResource(xdb, "color5", "*", &type, &xval))
 			colors[SchemeMid][ColBg] = strdup(xval.addr);
 		if (XrmGetResource(xdb, "foreground", "*", &type, &xval))
 			colors[SchemeMid][ColFg] = strdup(xval.addr);
@@ -57,7 +64,7 @@ readxresources(void)
         /* Colors for highlighting of other (non-selected) options. */
 		if (XrmGetResource(xdb, "background", "*", &type, &xval))
 			colors[SchemeNormHighlight][ColBg] = strdup(xval.addr);
-		if (XrmGetResource(xdb, "color5", "*", &type, &xval))
+		if (XrmGetResource(xdb, "color4", "*", &type, &xval))
 			colors[SchemeNormHighlight][ColFg] = strdup(xval.addr);
 		#endif // HIGHLIGHT_PATCH | FUZZYHIGHLIGHT_PATCH
 		#if HIGHPRIORITY_PATCH

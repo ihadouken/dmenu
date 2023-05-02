@@ -3,6 +3,9 @@ char *colors[SchemeLast][2] = {
 	[SchemeNorm] = { "#657b83", "#fdf6e3" },
 	[SchemeSel] = { "#ffffff", "#d33682" },
 	[SchemeOut] = { "#ffffff", "#268bd2" },
+	#if !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
+	[SchemePrompt] = { "#ffffff", "#d33682" },
+	#endif // !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
     #if BORDER_PATCH
     [SchemeBorder] = { "#000000", "#93a1a1" },
     #endif // BORDER_PATCH

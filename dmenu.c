@@ -50,6 +50,9 @@ enum {
 	SchemeNorm,
 	SchemeSel,
 	SchemeOut,
+	#if !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH 
+	SchemePrompt,
+	#endif // !PLAIN_PROMPT_PATCH && PROMPT_COLOR_PATCH
 	#if BORDER_PATCH
 	SchemeBorder,
 	#endif // BORDER_PATCH
@@ -507,7 +510,11 @@ drawmenu(void)
 
 	if (prompt && *prompt) {
 		#if !PLAIN_PROMPT_PATCH
+		#if PROMPT_COLOR_PATCH
+		drw_setscheme(drw, scheme[SchemePrompt]);
+		#else
 		drw_setscheme(drw, scheme[SchemeSel]);
+		#endif // PROMPT_COLOR_PATCH
 		#endif // PLAIN_PROMPT_PATCH
 		x = drw_text(drw, x, 0, promptw, bh, lrpad / 2, prompt, 0
 			#if PANGO_PATCH

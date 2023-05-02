@@ -277,6 +277,14 @@
  */
 #define PRINTINPUTTEXT_PATCH 0
 
+/* By default the color of the dmenu color is same as the color for the selected
+ * option. This Patch allows to define a separate (fg and bg) color for the
+ * prompt text.
+ *
+ * Note: The PLAIN_PROMPT_PATCH takes precedence over this patch.
+ */
+#define PROMPT_COLOR_PATCH 0
+
 /* This patch adds a new flag to dmenu with which text input will be rejected if it would
  * result in no matching item.
  * https://tools.suckless.org/dmenu/patches/reject-no-match/
