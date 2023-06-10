@@ -39,7 +39,7 @@ static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
 	"mononoki:pixelsize=16:antialias=true:autohint=true",
-	"JoyPixels:pixelsize=20:antialias=true:autohint=true"
+	"JoyPixels:pixelsize=16:antialias=true:autohint=true"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -56,7 +56,7 @@ static const char *symbol_2 = ">";
 #endif // SYMBOLS_PATCH
 
 #if ALPHA_PATCH
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0xb0;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
