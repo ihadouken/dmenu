@@ -1,9 +1,8 @@
 #!/bin/sh
-
 cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+[ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 cache="$cachedir/dmenu_run"
 
-[ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 
 IFS=:
 if stest -dqr -n "$cache" $PATH; then
