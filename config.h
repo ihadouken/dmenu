@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"JetBrains Mono:pixelsize=16:antialias=true:autohint=true",
+	"JetBrains Mono:pixelsize=17:antialias=true:autohint=true",
 	"JoyPixels:pixelsize=16:antialias=true:autohint=true"
 };
 #endif // PANGO_PATCH
